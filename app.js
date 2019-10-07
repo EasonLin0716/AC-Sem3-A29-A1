@@ -1,6 +1,9 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const getSiteInfo = require('./getSiteInfo')
+
+app.use(getSiteInfo)
 
 // 列出全部 Todo
 app.get('/', (req, res) => {
