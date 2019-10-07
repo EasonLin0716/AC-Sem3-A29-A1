@@ -3,6 +3,9 @@ const app = express()
 const port = 3000
 const getSiteInfo = require('./getSiteInfo')
 
+// 防止 favicon.ico 被 GET
+app.get('/favicon.ico', (req, res) => res.status(204))
+
 app.use(getSiteInfo)
 
 // 列出全部 Todo
